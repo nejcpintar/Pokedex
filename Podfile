@@ -8,5 +8,6 @@ target 'Pokedex' do
   # Pods for Pokedex
   pod 'Alamofire', '~> 4.4'
   pod 'Locksmith', '~> 3.0'
-  pod 'Unbox', '~>2.4'
+  pod 'Unbox', '~> 2.4'
+  pod 'AlamofireImage', '~> 3.1'
 end

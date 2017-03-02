@@ -1,18 +1,22 @@
 PODS:
   - Alamofire (4.4.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
   - Locksmith (3.0.0)
   - Unbox (2.4.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - AlamofireImage (~> 3.1)
   - Locksmith (~> 3.0)
   - Unbox (~> 2.4)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
   Unbox: c8b2ab69d3337597b4a3f47a0538807dc12db670
 
-PODFILE CHECKSUM: 46ee6a0dbe3cadfa52cca380f4352be2f41cbcc4
+PODFILE CHECKSUM: 11ea8c2a0493c425802b38104bd4a72f7045cc9d
 
 COCOAPODS: 1.2.0
