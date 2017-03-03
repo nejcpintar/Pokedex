@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if (NetworkManager.shared.isLoggedIn()) {
+            
+        } else {
+            let storyBoard = UIStoryboard(name: "Login", bundle: Bundle.main)
+            let initViewController = storyBoard.instantiateInitialViewController()
+            self.window?.rootViewController = initViewController
+        }
         return true
     }
 

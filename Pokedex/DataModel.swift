@@ -15,7 +15,6 @@ protocol DataModel {
     func getAuthorFor(comment: Comment, onCompleted: @escaping Completion<User>)
     func getTypesFor(pokemon: Pokemon, onCompleted: @escaping Completion<[Type]>)
     func getMovesFor(pokemon: Pokemon, onCompleted: @escaping Completion<[Move]>)
-    func getImageFor(pokemon: Pokemon, onCompleted: @escaping Completion<UIImage>)
     func store(comment: Comment, forPokemon: Pokemon, onCompleted: @escaping Completion<(Comment, Pokemon)>)
     func store(pokemon: Pokemon, onCompleted: @escaping Completion<Pokemon>)
 }

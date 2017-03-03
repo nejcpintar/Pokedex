@@ -47,6 +47,16 @@ final class NetworkManager {
         self.headers["Accept"] = "application/json"
     }
     
+    func isLoggedIn() -> Bool {
+        guard
+            UserDefaults.standard.value(forKey: Constant.loggedInUserEmail) is String,
+            UserDefaults.standard.value(forKey: Constant.loggedInUserId) is Id
+        else {
+                return false
+        }
+        return true
+    }
+    
     func authenticate(onCompleted: @escaping Completion<AuthenticatedUser>) {
         guard
             let email = UserDefaults.standard.value(forKey: Constant.loggedInUserEmail) as? String,
@@ -153,23 +163,6 @@ final class NetworkManager {
         retrieve(endpoint: "/api/v1/users/\(id)", onCompleted: onCompleted) { unboxer in
             let user: OtherUser = try unboxer.unbox(key: "data")
             return user
-        }
-    }
-    
-    func retrieveImageFor(pokemon: Pokemon, onCompleted: @escaping Completion<UIImage>) {
-        guard let url = pokemon.imageUrl else {
-            onCompleted(.error(NetworkManagerError.noImageUrl))
-            return
-        }
-        
-        Alamofire
-            .request(url)
-            .responseImage { response in
-                guard let image = response.result.value else {
-                    onCompleted(.error(NetworkManagerError.couldntRetrieveImage))
-                    return
-                }
-                onCompleted(.success(image))
         }
     }
     

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FsX-mi-DhI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="I9t-zy-hKI">
+            <objects>
+                <viewController id="FsX-mi-DhI" customClass="LoginViewController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wMY-RG-vGR"/>
+                        <viewControllerLayoutGuide type="bottom" id="km5-ad-vwK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dgi-Fe-sw2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXH-4N-Spv">
+                                <rect key="frame" x="16" y="127" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ElI-Ma-yU3">
+                                <rect key="frame" x="16" y="179" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pew-LT-chr">
+                                <rect key="frame" x="16" y="333" width="343" height="34"/>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logInTapped:" destination="FsX-mi-DhI" eventType="touchUpInside" id="vxb-FO-Udl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pew-LT-chr" firstAttribute="top" secondItem="ElI-Ma-yU3" secondAttribute="bottom" constant="124" id="ESz-A6-wFs"/>
+                            <constraint firstItem="ElI-Ma-yU3" firstAttribute="width" secondItem="pew-LT-chr" secondAttribute="width" id="H7q-Xx-2Gh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pew-LT-chr" secondAttribute="trailing" id="IYa-bE-Ndu"/>
+                            <constraint firstItem="ElI-Ma-yU3" firstAttribute="centerX" secondItem="pew-LT-chr" secondAttribute="centerX" id="Rcd-k3-Fm6"/>
+                            <constraint firstItem="FXH-4N-Spv" firstAttribute="centerX" secondItem="pew-LT-chr" secondAttribute="centerX" id="hv1-Ez-khh"/>
+                            <constraint firstItem="FXH-4N-Spv" firstAttribute="width" secondItem="pew-LT-chr" secondAttribute="width" id="jLi-j3-cgJ"/>
+                            <constraint firstItem="pew-LT-chr" firstAttribute="leading" secondItem="Dgi-Fe-sw2" secondAttribute="leadingMargin" id="oQH-6V-HZJ"/>
+                            <constraint firstItem="ElI-Ma-yU3" firstAttribute="top" secondItem="FXH-4N-Spv" secondAttribute="bottom" constant="22" id="pBe-3a-xUI"/>
+                            <constraint firstItem="km5-ad-vwK" firstAttribute="top" secondItem="pew-LT-chr" secondAttribute="bottom" constant="300" id="yHg-IH-ZO7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="FXH-4N-Spv" id="108-Fm-xfK"/>
+                        <outlet property="passwordField" destination="ElI-Ma-yU3" id="7l9-DY-AT9"/>
+                        <segue destination="tRs-OR-nfI" kind="show" identifier="segueToMain" id="b5s-bM-Gwy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aXM-j6-otv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="-43"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="ru3-u8-vXd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="tRs-OR-nfI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5OW-tr-1tU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="719" y="-171"/>
+        </scene>
+    </scenes>
+</document>
